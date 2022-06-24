@@ -14,6 +14,9 @@
             pst.setString(2, (String)session.getAttribute("username"));
             pst.executeUpdate();
             
+			session.removeAttribute("balance");
+			session.setAttribute("balance", balance);
+            
             //transaction
             String query1 = "INSERT INTO [dbo].[Transaction]([date],[accountid],[transactiontypeid],transfername,receivername,[amount],[remark]) VALUES (getdate(),?,?,?,?,?,?)";
             PreparedStatement pst1 = SQLConnection.getConnection().prepareStatement(query1);

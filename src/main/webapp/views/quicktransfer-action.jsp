@@ -20,9 +20,10 @@
             	out.print("invalid");
             }else{
             	ResultSet rs2;
-            	String query2 = "Select * from Contact Where accountnumber=?";
+            	String query2 = "Select * from Contact Where accountid = ? and accountnumber=?";
             	PreparedStatement pst2 = SQLConnection.getConnection().prepareStatement(query2);
-                pst2.setString(1, accountNumber);
+            	pst2.setInt(1, accountid);
+                pst2.setString(2, accountNumber);
                 rs2 = pst2.executeQuery();
                 if(rs2.next()){
                 	out.print("exist");

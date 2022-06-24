@@ -1,5 +1,7 @@
+<%@ page import="connection.SQLConnection"%>
+
 <%
-	String balance = (String)session.getAttribute("balance");
+	String balance = (String)session.getAttribute("balance").toString();
 %>
 
 
@@ -179,7 +181,10 @@ function sendData()
     	      	          text: 'Transfer are successfully!',
     	      	          icon: 'success'
     	      	        })
-    	      	      $("#content").load("./views/transfer.jsp");
+    	      	        
+    	      	      setTimeout(function(){
+    	      	    	window.location.replace("<% out.print(SQLConnection.contextPath + ""); %>");
+    	      	      }, 2000)
     	    	    }
     	    	})  
     	      }

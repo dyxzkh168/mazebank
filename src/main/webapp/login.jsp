@@ -2,6 +2,8 @@
 <%@ page import="connection.SQLConnection"%>
 	
 <%
+	SQLConnection.contextPath = request.getContextPath() + "/";
+
 	response.setHeader("Cache-Control", "no-cache, no-store");
 	if(session.getAttribute("username") != null){
 	    response.sendRedirect(SQLConnection.contextPath + "index.jsp");
