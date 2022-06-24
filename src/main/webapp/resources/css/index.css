@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap');
+
+body{
+	background: rgba(0,0,0,0.9);
+}
+
+.menu-container{
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+	background: var(--bs-dark);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 80vh;
+}
+.menu
+{
+	width: 300px;
+	padding: 30px 0px 15px 0px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: .2s all ease-in-out;
+}
+.menu:hover{
+	transform: scale(1.1);
+}
+.menu p{
+	margin: 15px 0px;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.menu img{
+	width: 150px;
+}
+
+.account{
+	background: var(--bs-success);
+}
+.transfer{
+	background: var(--bs-indigo);
+}
+.deposit{
+	background: var(--bs-gray);
+}
+.withdraw{
+	background: var(--bs-orange);
+}
+.quicktransfer{
+	background: var(--bs-pink);
+}
+.transactions{
+	background: var(--bs-warning);
+}
+
+
+
+.menu-child{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	padding: 0px;
+	justify-content: space-evenly;
+	
+}
+
+@media only screen and (max-width: 1200px){
+	.menu{
+		transform: scale(0.8);
+	}
+	.menu:hover{
+		transform: scale(0.9);
+	}
+}
+@media only screen and (max-width: 993px){
+	.menu{
+		transform: scale(0.7);
+	}
+	.menu:hover{
+		transform: scale(0.8);
+	}
+}
+@media only screen and (max-width: 900px){
+	.menu-child{
+		flex-direction: row;
+		width: 100%;
+		height: calc((100% / 3) - 20px) ;
+	}
+	.menu-container{
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width: 430px){
+	.name{
+		display: none;	
+	}
+	.logo{
+		content: '';
+	}
+}
+
+@media only screen and (max-height: 800px){
+	.menu{
+		transform: scale(0.8);
+	}
+	.menu:hover{
+		transform: scale(0.9);
+	}
+}
+
+@media only screen and (max-height: 600px){
+	.menu{
+		transform: scale(0.7);
+	}
+	.menu:hover{
+		transform: scale(0.8);
+	}
+}
+
+
+.login-alert{
+	transition: .5s ease-in-out;
+	position: absolute;
+	left: 50%;
+	width: 500px;
+	transform: translate(-50%,-50%);
+	z-index: 100;
+	visibility: hidden;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.txt{
+	text-align: center;
+}
+
+.dataTable > thead > tr > th[class*="sort"]:before,
+.dataTable > thead > tr > th[class*="sort"]:after {
+    content: "" !important;
+}
+
+.swal2-popup {
+  font-size: 2rem !important;
+  font-weight: bold;
+}
+
